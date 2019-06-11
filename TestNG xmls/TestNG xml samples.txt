@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" thread-count="10" parallel="methods">
+    <!-- Parallel Execution of Test Cases -->
+    <test name="ParallelExecution">
+    <classes>
+    <class name="test.FlowOfTestNG"></class>
+    </classes>
+    </test>
+    
+  
+  
+</suite> <!-- Suite -->
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <!-- Executing based on class -->
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="test.MultipleTestCases"/>
+      <class name="test.FlowOfTestNG"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <!-- Execution on basis of Packages -->
+  <test thread-count="5" name="PackageExecution">
+	<packages>
+	<package name="test"></package>
+	</packages>
+  </test> <!-- Test -->
+
+	<!-- Executing with Include and Exclude functionality -->
+  <test thread-count="5" name="IncludeExclude">
+    <classes>
+      <class name="test.FlowOfTestNG">
+      <methods>
+      <exclude name="method_a"></exclude>
+      <include name="method_b"></include> 
+      </methods>
+      </class>
+    </classes>
+  </test> <!-- Test -->
+  
+    <!-- Executing specific Groups -->
+  <test thread-count="5" name="Groups">
+  <groups>
+  <run>
+  <include name="end-to-end"></include>
+  <exclude name="smokeTest"></exclude>
+  </run>
+  </groups>
+    <classes>
+      <class name="test.FlowOfTestNG"/>
+    </classes>
+  </test> <!-- Test -->
+  
+</suite> <!-- Suite -->
+
