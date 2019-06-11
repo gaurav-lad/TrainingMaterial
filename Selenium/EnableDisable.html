@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>Sample Test Page</title>
+	</head>
+
+	<h2> Enable and disable </h2>
+
+	<form id="Registration-form">
+	Enter your name: <input type="text" id="name">
+	</form>
+	<button onClick="diable()">Disable the text field</button>
+	<button onClick="enable()">Enable the text field</button>
+	
+		<script>
+		function diable(){
+		document.getElementById("name").disabled = true;
+		}
+		function enable(){
+		document.getElementById("name").disabled = false;
+		}
+		</script>
+
+	</body>
+</html>
